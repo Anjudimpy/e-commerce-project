@@ -52,7 +52,8 @@ body, html {
   }
   /* Hero Section Styles */
   .hero {
-    background-color: goldenrod;
+    /* background-color: goldenrod; */
+    background: linear-gradient(180deg, rgb(251, 246, 235), goldenrod);
     color: #fff;
     padding: 4em 0;
     text-align: center;
@@ -64,6 +65,9 @@ body, html {
   .hero p {
     font-size: 1.2em;
     margin-bottom: 1.5em;
+  }
+  .hero .offer{
+    margin-top: 1rem;
   }
   .cta-button {
     padding: 0.75em 1.5em;
@@ -173,6 +177,83 @@ body, html {
     margin-top: 1em;
     color: goldenrod;
   }
+
+  /* General styling for the comparison section */
+section.comparison {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  color: #333;
+}
+
+section.comparison .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.comparison h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Styling the table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: solid 2px goldenrod;
+}
+
+.comparison-table thead {
+  background: linear-gradient(360deg, rgb(247, 204, 112), goldenrod);
+  color: #fff;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.comparison-table th {
+  font-weight: bold;
+  text-align: center;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: #eaf4ff;
+  transition: background-color 0.3s;
+}
+
+.comparison-table td {
+  /* vertical-align: top; */
+  font-size: 0.95rem;
+  padding: 15px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .comparison-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+
+  .comparison-table th, .comparison-table td {
+      padding: 10px;
+  }
+
+  section.comparison h2 {
+      font-size: 1.5rem;
+  }
+}
+
   /* Footer Styles */
   .footer {
     background-color: #333;
@@ -184,4 +265,15 @@ body, html {
     margin: 0;
   }
 
-
+  @media screen and (min-width: 1024px) {
+    .grid{
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @media screen and (max-width: 970px){
+    .grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  };
+    
+  

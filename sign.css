@@ -8,9 +8,8 @@ body.form-body {
     height: 100vh;
     margin: 0;
     background-image: url('demo.webp');
-    /* Additional background properties */
-    background-size: cover; /* Adjusts the image to cover the entire element */
-    background-position: center; /* Centers the image within the element */
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
 
   }
