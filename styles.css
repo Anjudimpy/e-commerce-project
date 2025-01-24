@@ -75,7 +75,8 @@ body, html {
     background-color: #f6f1c7;
     border-radius: 1px;
     box-shadow: inset  2px 2px 5px rgba(78, 78, 78, 0.5);
-    color: #fff;
+    color: goldenrod;
+    font-weight: bold;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
