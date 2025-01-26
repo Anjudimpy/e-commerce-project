@@ -7,7 +7,7 @@ body.form-body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url('demo.webp');
+    background-image: url('../../public/images/Demo.webp');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1 class="cart-title">Shopping Cart</h1>
+        <div class="cart-item">
+            <!-- Cart Item -->
+             
+        </div>
+    </div>
+
+    <div class="cart-summary">
+     <p id="cart-total">Total: $0.00</p>
+     <button  id="checkout-btn">Checkout</button>
+    </div>
+<script src="../../cart.js"></script>
+    <script>
+
+        function initializeCart(){
+       localStorage.clear(); 
+             if(!localStorage.getItem('cart'))
+             {
+                localStorage.setItem('cart',JSON.stringify(initialCart));
+             }
+        }
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            initializeCart();
+            const cartItem = document.querySelector('.cart-item');
+            const cartToatl= document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            function loadCartItem(){
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                if(cart.length > 0){
+                   cartItem.innerHTML = '';
+
+                   cart.forEach((product,index) =>{
+                    const item= document.createElement('div');
+                    // item.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4');
+                    item.className = 'item';
+
+                    item.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="cart-item-details">
+                       <h3>${product.name}</h3>
+                       <p>$${product.price.toFixed(2)}</p>
+                       <div class="cart-item-action">
+                        <input type="number" value="${product.quantity}" min="1" class="quantity-input">
+                        <button class="remove-btn">Remove</button>
+                        </div>
+                    </div>
+                    `;
+                    cartItem.appendChild(item);
+
+                   })
+                }
+            }
+            loadCartItem();
+        })
+    </script>
+</body>
+</html>
