@@ -6,6 +6,12 @@ body{
 
   /* color: goldenrod; */
 }
+.page-title{
+  text-shadow: 2px 2px 5px rgb(129, 129, 128);
+  color: goldenrod;
+  margin: 1.5rem;
+  text-align: center;
+}
 .card a{
   background-color: goldenrod;
   border: none;
