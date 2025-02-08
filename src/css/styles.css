@@ -145,7 +145,7 @@ body, html {
  
   .product {
     width: 90%;
-    height: 25rem;
+    height: 21rem;
     background-color:#fffbef;;
     padding: 0.9em;
     border-radius: 8px;
@@ -155,7 +155,7 @@ body, html {
   }
   .product img {
     width: 15rem;
-    height: 20rem;
+    height: 16rem;
     border: 1px solid  transparent;
     border-image: url('../../public/golden.avif') 300 round; 
   }
