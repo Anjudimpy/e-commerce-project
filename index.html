@@ -20,6 +20,7 @@
                 <li><a href="./src/views/productPage.html">Shop</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="./src/views/cart.html">Cart</a></li>
                 <li><a href="./src/views/sing.html">Login</a></li>
             </ul>
         </nav>
@@ -64,20 +65,20 @@
            <h2>Shop by Category</h2>
             <div class="grid">
                 <div class="category">
-                  <img src="https://placehold.co/200?text=Electronics" alt="Electronics">
+                  <img src="https://blog.unpakt.com/wp-content/uploads/2015/01/47274534_xxl-e1612640366545.jpg" alt="Electronics">
                     <h3>Electronics</h3>
                 </div>
                 <div class="category">
-                    <img src="https://placehold.co/200?text=Fashion" alt="Fashion">
+                    <img src="https://images.herzindagi.info/image/2020/Dec/fashion-items-m.jpg" alt="Fashion">
                     <h3>Fashion</h3>
                 </div>
                 <div class="category">
-                   <img src="https://placehold.co/200?text=Home Decor" alt="Home Decor">
+                   <img src="https://www.fnp.com/images/pr/x/v20241118145225/personalised-led-speaker-n-almond-dragees-combo_1.jpg" alt="Home Decor">
                     <h3>Home Decor</h3>
                 </div>
                 <div class="category">
-                  <img src="https://placehold.co/200?text=Books" alt="Books">
-                    <h3>Books</h3>
+                  <img src="https://5.imimg.com/data5/YL/RI/OR/SELLER-95604177/stationeries-500x500-png-500x500.png" alt="Books">
+                    <h3>stationary</h3>
                 </div>
             </div>
         </div>
@@ -86,27 +87,27 @@
     <section class="featured-products">
         <div class="container">
             <h2>Featured Products</h2>
-            <div class="grid">
-                <div class="product">
-                   <img src="https://placehold.co/200?text=Product+1" alt="Product 1">
+            <div class="grid" id="featured-products">
+                <!-- <div class="product">
+                   <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ffa%2F69%2Ffa69fa35607278239350bc8acc8c863dd7d3bbb7.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]" alt="Product 1">
                     <h3>Product 1</h3>
                     <p>$49.99</p>
                 </div>
                 <div class="product">
-                    <img src="https://placehold.co/200?text=Product+2" alt="Product 2">
+                    <img src="https://i.pinimg.com/originals/41/1a/cf/411acf3ae9766b70d1997c85930650ac.jpg" alt="Product 2">
                     <h3>Product 2</h3>
                     <p>$59.99</p>
                 </div>
                 <div class="product">
-                   <img src="https://placehold.co/200?text=Product+3" alt="Product 3">
+                   <img src="https://th.bing.com/th/id/OIP.u212LfA11ebqafh_hd9F3QHaHa?w=2000&h=2000&rs=1&pid=ImgDetMain" alt="Product 3">
                     <h3>Product 3</h3>
                     <p>$69.99</p>
                 </div>
                 <div class="product">
-                    <img src="https://placehold.co/200?text=Product+4" alt="Product 4">
+                    <img src="https://www.fnp.com/images/pr/x/v20241118145225/personalised-led-speaker-n-almond-dragees-combo_1.jpg" alt="Product 4">
                     <h3>Product 4</h3>
                     <p>$79.99</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -182,5 +183,49 @@
     <footer class="footer">
         <p>&copy; 2024 Your E-commerce Store. All rights reserved.</p>
     </footer>
+
+    <script>
+           function fetchDataPromise(url) {
+            return fetch(url)  // Use the passed-in 'url' parameter
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error('Network response was not ok ' + res.statusText);
+                    }
+                    return res.json();  // Notice the parentheses to call the method
+                })
+                .catch(err => {
+                    console.error('There was a problem with the fetch operation:', err);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const featuredProductsContainer = document.getElementById('featured-products');
+            const apiUrl = 'https://fakestoreapi.com/products'; // Example API URL
+
+            try {
+                // const data = await fetchDataWithCallbackBasedPromise(apiUrl); // Await the callback-based function
+                const data = await fetchDataPromise(apiUrl); // Await the promise-based function
+                // const data = await fetchDataAsync(apiUrl); // Await the async function
+
+                if (data.length > 0) {
+                    featuredProductsContainer.innerHTML = ''; // Clear any existing items
+                    data.slice(0, 8).forEach(product => {
+                        const productElement = document.createElement('div');
+                        productElement.className = 'product';
+                        productElement.innerHTML = `
+                            <img src="${product.image}" alt="${product.title}">
+                            <h3>${product.title}</h3>
+                            <p>$${product.price.toFixed(2)}</p>
+                        `;
+                        featuredProductsContainer.appendChild(productElement);
+                    });
+                } else {
+                    featuredProductsContainer.innerHTML = '<p>No products available</p>';
+                }
+            } catch (error) {
+                console.error('Error displaying products:', error);
+            }
+        });
+    </script>
 </body>
 </html>

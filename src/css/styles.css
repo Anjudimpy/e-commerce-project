@@ -3,7 +3,9 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
+    background: linear-gradient(to top, rgb(251, 244, 239),rgb(239, 254, 254), rgba(252, 244, 251, 0.992),  rgb(255, 255, 247), rgb(255, 240, 240));
+    /* background: linear-gradient(to right, rgb(255, 250, 246),rgb(249, 255, 255), rgba(254, 248, 253, 0.992),  rgb(255, 255, 247), rgb(249, 255, 244)); */
     color: #333;
   }
   .container {
@@ -79,24 +81,27 @@ body, html {
   .cta-button {
     padding: 0.75em 1.5em;
     font-size: 1em;
-    background-color: #f6f1c7;
+    background-color: #fafaf9;
     border-radius: 1px;
-    box-shadow: inset  2px 2px 5px rgba(78, 78, 78, 0.5);
+    border: 5px solid  transparent;
+    border-image: url('../../public/golden.avif') 100 round; 
+    box-shadow:2px 2px 10px rgba(91, 87, 87, 0.5);
     color: goldenrod;
     font-weight: bold;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   .cta-button:hover {
-    background-color: rgb(250, 215, 128);
-    color: #333;
+    background-image: url('../../public/golden.avif');
+    background-size: cover;
+    color: white;
     font-weight: bold;
   }
   /* Categories Section Styles */
   .categories {
     padding: 4em 0;
     text-align: center;
+    
   }
   .categories h2 {
     font-size: 2em;
@@ -104,11 +109,11 @@ body, html {
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted grid layout for responsiveness */
     gap: 1.5em;
   }
   .category {
-    background-color: #fff;
+    background-color: #fffbef;
     padding: 1em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -117,9 +122,11 @@ body, html {
   }
   .category img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 80%;
     margin-top: 1em;
+    border: 1px solid  transparent;
+    border-image: url('../../public/golden.avif') 300 round;
+    background-size: cover;
   }
   .category h3 {
     font-size: 1em;
@@ -127,6 +134,7 @@ body, html {
   }
   /* Featured Products Section Styles */
   .featured-products {
+    width: 100%;
     padding: 4em 0;
     text-align: center;
   }
@@ -134,23 +142,22 @@ body, html {
     font-size: 2em;
     margin-bottom: 1em;
   }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 1.5em;
-  }
+ 
   .product {
-    background-color: #fff;
-    padding: 0.75em;
+    width: 90%;
+    height: 25rem;
+    background-color:#fffbef;;
+    padding: 0.9em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
   .product img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
+    width: 15rem;
+    height: 20rem;
+    border: 1px solid  transparent;
+    border-image: url('../../public/golden.avif') 300 round; 
   }
   .product h3 {
     font-size: 1em;

@@ -1,7 +1,9 @@
 body{
   margin: 0;
   padding: 0;
-  background: linear-gradient(rgb(247, 243, 233), rgb(251, 215, 125));
+  background-color: #fffbef;
+  /* background: linear-gradient(to right, rgb(255, 250, 246),rgb(249, 255, 255), rgba(254, 248, 253, 0.992),  rgb(255, 255, 247), rgb(249, 255, 244)); */
+
   /* color: goldenrod; */
 }
 .card a{
@@ -16,15 +18,17 @@ body{
   color: rgb(71, 148, 94);
 }
 .card-text{
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-align: justify;
   color: gray;
 }
 .card-title{
-  color: rgb(90, 91, 87);
-  font-size: 1.2em;
+  color: rgb(70, 70, 68);
+  font-size: 0.9em;
 }
 .card{
+  /* background-color: white; */
+  background: linear-gradient(to bottom, rgb(251, 244, 239),rgb(239, 254, 254), rgba(252, 244, 251, 0.992),  rgb(255, 255, 247), rgb(249, 255, 244));
   box-shadow: inset  2px 2px 5px rgba(78, 78, 78, 0.5);
 }
 .card a:hover{
@@ -33,7 +37,7 @@ color: goldenrod;
 .hover-button {
   position: relative; /* Set position for pseudo-element alignment */
   display: inline-block; /* Inline block for button styling */
-  padding: 0.5em 3.5em;
+  padding: 0.5em 1.7em;
   text-decoration: none; /* Padding for the button */
   font-size: 16px; /* Button font size */
   color: #fff; /* Text color */
@@ -47,7 +51,7 @@ color: goldenrod;
 .hover-button::before {
   content: "Add to Cart"; /* Empty content for the pseudo-element */
   position: absolute;
-  padding: 0.5em 3.5em; /* Position relative to the button */
+  padding: 0.5em 1.7em; /* Position relative to the button */
   top: 0;
   left: -100%; /* Start fully outside on the left */
   width: 100%;
@@ -62,3 +66,35 @@ color: goldenrod;
   left: 0; /* Move the background to cover the button */
 }
 
+.card-footer{
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  border: none;
+}
+.quantity-input{
+  width: 3em;
+ margin: 5px;
+ background-color: white;
+ border: 2px solid  transparent;
+ padding: 2px 10px;
+ border-image: url('../../public/golden.avif') 250 round;
+}
+.decrease{
+  cursor: pointer;
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgb(74, 74, 72);
+  user-select: none;
+}
+.increase{
+  cursor: pointer;
+  color: green;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgb(182, 182, 180);
+  user-select: none;
+}

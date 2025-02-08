@@ -1,0 +1,50 @@
+[
+  {
+      "name": "Premium Leather Bag",
+      "description": "Handcrafted leather bag with multiple compartments and adjustable strap. Ideal for daily use or travel.",
+      "price": 129.99,
+      "image": "https://www.fnp.com/images/pr/l/v20210117210713/kleio-leather-sling-bag-white_1.jpg"
+  },
+  {
+      "name": "Smart Watch Series 5",
+      "description": "Advanced smartwatch with GPS, heart rate monitoring, and waterproof design. Comes in multiple colors.",
+      "price": 199.99,
+      "image": "https://th.bing.com/th/id/OIP.z8FnZH-EdzeOPJLvW86V_QHaHa?w=1500&h=1500&rs=1&pid=ImgDetMain"
+  },
+  {
+      "name": "Wireless Noise Cancellation Headphones",
+      "description": "High-fidelity wireless headphones with active noise cancellation and up to 30 hours of battery life.",
+      "price": 299.99,
+      "image": "https://th.bing.com/th/id/OIP.6H3WUWd6k3EmhZs2rwFnvAHaGk?w=1000&h=887&rs=1&pid=ImgDetMain"
+  },
+  {
+      "name": "Designer UV Sunglasses",
+      "description": "Fashionable sunglasses with UV protection and scratch-resistant lenses. Available in various styles.",
+      "price": 79.99,
+      "image": "https://i5.walmartimages.com/asr/c3b46a50-921e-428f-8e43-8cf4b682fc48_1.23e961d866203bcad1de37e3c33ff252.jpeg"
+  },
+  {
+      "name": "Gourmet Coffee Gift Set",
+      "description": "A curated selection of gourmet coffee beans from around the world. Perfect gift for coffee lovers.",
+      "price": 49.99,
+      "image": "https://th.bing.com/th/id/OIP.rguuS6hcoL79gYCe0tNJYgHaHa?w=794&h=794&rs=1&pid=ImgDetMain"
+  },
+  {
+      "name": "Fitness Tracker Bracelet",
+      "description": "Waterproof fitness tracker with heart rate monitor, sleep tracking, and smartphone notifications.",
+      "price": 89.99,
+      "image": "https://th.bing.com/th/id/OIP.hpmjRfQOhtjC5eNPD1qCfgHaHa?w=800&h=800&rs=1&pid=ImgDetMain"
+  },
+  {
+      "name": "Portable Bluetooth Speaker",
+      "description": "Compact Bluetooth speaker with powerful sound and built-in microphone for hands-free calls.",
+      "price": 59.99,
+      "image": "https://www.fnp.com/images/pr/l/v20240907100317/bluetooth-speaker-with-led-light_1.jpg"
+  },
+  {
+      "name": "Professional Chef's Knife",
+      "description": "High-quality chef's knife made from Damascus steel. Perfect for slicing and dicing in the kitchen.",
+      "price": 149.99,
+      "image": "https://th.bing.com/th/id/OIP.6NAElreJK9PyB21WwGTknQHaHi?w=1457&h=1484&rs=1&pid=ImgDetMain"
+  }
+]

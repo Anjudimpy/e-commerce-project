@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/productPage.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">E-Commerce Product Page</h1>
+        <div id="product-list" class="row">
+            <!-- Product cards will be dynamically added here -->
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="../../product.js"></script>
+<script>
+
+// Get the product container
+
+document.addEventListener('DOMContentLoaded', function(){
+const productList =  document.getElementById('product-list');
+for(const product of products){
+ const card = document.createElement('div');
+card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4')
+card.innerHTML = `
+<div class="card h-100">
+<img src="${product.image}" class="card-img-top productImg" alt="${product.name}" style="width: 90%;margin: 1rem auto; height: 12em; object-fit: center;">
+<div class="card-body">
+     <h6 class="card-title">${product.title}</h6>
+     <p class="card-text">${product.description.length > 100 ? product.description.slice(0, 90) + "..." : product.description}</p>
+      <p class="card-price-text font-weight-bold">$${product.price.toFixed(2)}</p>
+    <div class="card-footer">
+
+       <div style="margin-top:0.5rem">
+         <span class="decrease">-</span>
+         <span class="quantity-input">1</span>
+         <span class="increase">+</span>
+         </div>    
+        <div><a href="#" class="hover-button add-to-cart" data-product='${JSON.stringify(product)}'>Add to Cart</a></div>
+     </div>
+  
+    </div>
+</div>
+`;
+
+productList.appendChild(card);
+const decreaseBtn = card.querySelector('.decrease');
+        const increaseBtn = card.querySelector('.increase');
+        const quantityDisplay = card.querySelector('.quantity-input');
+
+        let quantity = 1; // Initial value
+
+        decreaseBtn.addEventListener('click', function () {
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.textContent = quantity;
+            }
+        });
+
+        increaseBtn.addEventListener('click', function () {
+            quantity++;
+            quantityDisplay.textContent = quantity;
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const product = JSON.parse(event.target.getAttribute('data-product'));
+                    const quantityInput = event.target.previousElementSibling;
+                    const quantity = parseInt(quantityInput.value);
+                    addToCart(product, quantity);
+                });
+            });
+            
+
+    }
+
+
+});
+
+</script>
+</body>
+</html>
