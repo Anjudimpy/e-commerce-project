@@ -1,0 +1,71 @@
+body {
+    position: relative;
+    background-color: rgb(46, 45, 45);
+   
+   }
+   .circle-container{
+  
+   }
+.circle {
+    position: absolute;
+    top: 1.8%;
+    right: 1%;
+    /* width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(153, 205, 50, 0.507); */
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+.circle img{
+    width: 30px;
+}
+.circle i {
+    position: absolute;
+    top: 1%;
+     right: 0%;
+    font-size: 25px;
+    color: white;
+}
+.wave {
+    position: absolute;
+    top: 1%;
+    right: 0%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(rgba(218, 165, 32, 0.585), rgba(137, 218, 32, 0.563), rgba(221, 196, 5, 0.689), purple, rgb(255, 0, 149));
+    transform: translate(-50%, -50%);
+    animation-name: wave;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.wave-1 {
+    animation-delay: 0s;
+    
+}
+.wave-2 {
+    animation-delay: 1s;
+    animation-duration: 4s;
+    
+}
+/* .wave-3 {
+    animation-delay: 2s;
+    animation-duration: 5s;
+} */
+/* .wave-4 {
+    animation-delay: 3s;
+    animation-duration: 6s;
+} */
+@keyframes wave {
+ from {
+    transform: translate(-20%, -20%) scale(0.5);
+    opacity: 1;
+ }
+ to {
+    transform: translate(-20%, -20%) scale(1.5);
+    opacity: 0;
+ }
+   
+}

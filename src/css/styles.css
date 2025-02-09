@@ -61,7 +61,7 @@ body, html {
   /* Hero Section Styles */
   .hero {
     /* background-color: goldenrod; */
-    background: linear-gradient(180deg, rgb(247, 223, 160),goldenrod, rgb(247, 223, 160));
+    background: linear-gradient(180deg, rgb(255, 236, 188),rgb(255, 212, 104), rgb(252, 235, 192));
     padding: 4em 0;
     text-align: center;
   }
@@ -74,6 +74,8 @@ body, html {
   .hero p {
     font-size: 1.2em;
     margin-bottom: 1.5em;
+    color: rgb(234, 106, 15);
+    text-shadow: 2px 2px 5px rgb(251, 241, 198);
   }
   .hero .offer{
     margin-top: 1rem;
@@ -145,7 +147,7 @@ body, html {
  
   .product {
     width: 90%;
-    height: 21rem;
+    height: 20rem;
     background-color:#fffbef;;
     padding: 0.9em;
     border-radius: 8px;
@@ -155,7 +157,7 @@ body, html {
   }
   .product img {
     width: 15rem;
-    height: 16rem;
+    height: 15rem;
     border: 1px solid  transparent;
     border-image: url('../../public/golden.avif') 300 round; 
   }
