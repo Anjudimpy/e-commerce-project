@@ -16,15 +16,16 @@
 
 .offer-text{
     position: absolute;
-    bottom: 2px;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%);
-    font-size: 0.65em !important;
+    font-size: 0.9em !important;
+    font-weight: bold;
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 4px 8px;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
-    animation: flash1 2s ease-in-out infinite;
+    animation: flash1 3s ease-in-out infinite;
     z-index: 3;
 }
   
