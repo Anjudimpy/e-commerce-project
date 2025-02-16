@@ -99,7 +99,7 @@ body, html {
     background-size: cover;
   }
   .category h3 {
-    font-size: 1em;
+    font-size: 0.8rem;
     margin: 0;
   }
   /* Featured Products Section Styles */
@@ -125,8 +125,8 @@ body, html {
     font-size: 0.7em;
   }
   .product img {
-    width: 15rem;
-    height: 15rem;
+    width: 95%;
+    height: 80%;
     border: 1px solid  transparent;
     border-image: url('../../public/golden.avif') 300 round; 
   }
@@ -150,11 +150,14 @@ body, html {
     margin-bottom: 1em;
   }
   .testimonial {
+    display: flex;
+    justify-content: space-between;
     background-color: #444;
     padding: 2em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     font-size: 0.9em;
+    margin-bottom: 0.5rem;
   }
   .testimonial p {
     font-size: 1em;
@@ -163,7 +166,7 @@ body, html {
   .testimonial h3 {
     font-size: 0.9em;
     margin-top: 1em;
-    color: goldenrod;
+    color: rgb(246, 244, 239);
   }
 
   /* General styling for the comparison section */
@@ -266,7 +269,14 @@ section.comparison h2 {
     .grid{
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  @media screen and (max-width: 670px){
+    .grid{
+      grid-template-columns: repeat(1, 1fr);
+    }
   };
+ 
 
   
   
