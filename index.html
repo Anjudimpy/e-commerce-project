@@ -94,10 +94,6 @@
                   <img src="https://5.imimg.com/data5/YL/RI/OR/SELLER-95604177/stationeries-500x500-png-500x500.png" alt="Books">
                     <h3>stationary</h3>
                 </div>
-                <div class="category">
-                    <img src="https://img.freepik.com/premium-photo/collection-different-kitchen-items-including-stove-oven-stove_1307444-6230.jpg" alt="Books">
-                      <h3>Kitchen</h3>
-                  </div>
             </div>
         </div>
     </section>
@@ -228,7 +224,7 @@
 
                 if (data.length > 0) {
                     featuredProductsContainer.innerHTML = ''; // Clear any existing items
-                    data.slice(0, 10).forEach(product => {
+                    data.slice(0, 8).forEach(product => {
                         const productElement = document.createElement('div');
                         productElement.className = 'product';
                         productElement.innerHTML = `
